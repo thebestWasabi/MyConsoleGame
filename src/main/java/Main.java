@@ -1,16 +1,18 @@
-import java.util.Scanner;
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 public class Main {
 
-    public static int rows = 3;
-    public static int columns = 4;
+    public static int sizeX = 3;
+    public static int sizeY = 4;
     public static int amountOfEnemies = 10;
     public static int transistorsNeeded = 100;
     public static int moves = 40;
 
     public static void main(String[] args) {
 
-        Scanner scanner = new Scanner(System.in);
+        BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         String command;
 
         do {
@@ -21,12 +23,22 @@ public class Main {
             System.out.println("3: Об авторе");
             System.out.println("4: Выход");
 
-            command = scanner.nextLine();
+            try {
+                command = reader.readLine();
+            } catch (IOException e) {
+                throw new RuntimeException(e);
+            }
 
             switch (command) {
 
                 case "1" -> startNewGame();
-                case "2" -> OptionsMenu.showOptionsMenu();
+                case "2" -> {
+                    try {
+                        OptionsMenu.showOptionsMenu();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                }
                 case "3" -> showCredits();
                 case "4" -> System.out.println("Exit");
 
@@ -41,7 +53,6 @@ public class Main {
     }
 
     private static void openOptionsMenu() {
-
     }
 
     private static void showCredits() {

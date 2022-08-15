@@ -1,11 +1,14 @@
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.util.Scanner;
 
 public class OptionsMenu {
 
-    static Scanner scanner = new Scanner(System.in);
+    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     static int command;
 
-    public static void showOptionsMenu() {
+    public static void showOptionsMenu() throws IOException {
 
         do {
 
@@ -14,14 +17,14 @@ public class OptionsMenu {
                     "2: Изменить настройки\n" +
                     "3: Назад в главное меню");
 
-            command = scanner.nextInt();
+            command = Integer.parseInt(reader.readLine());
 
             switch (command) {
 
                 case 1 -> {
                     System.out.println("\nТекущие настройки: " +
-                            "\nряды: " + Main.rows +
-                            "\nколонки: " + Main.columns +
+                            "\nряды: " + Main.sizeX +
+                            "\nколонки: " + Main.sizeY +
                             "\nвраги: " + Main.amountOfEnemies +
                             "\nтранзисторы: " + Main.transistorsNeeded +
                             "\nходы: " + Main.moves
@@ -30,15 +33,15 @@ public class OptionsMenu {
 
                 case 2 -> {
                     System.out.println("Введите новое значение для рядов: ");
-                    Main.rows = scanner.nextInt();
+                    Main.sizeX = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для колонок: ");
-                    Main.columns = scanner.nextInt();
+                    Main.sizeY = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для врагов: ");
-                    Main.amountOfEnemies = scanner.nextInt();
+                    Main.amountOfEnemies = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для транзисторов: ");
-                    Main.transistorsNeeded = scanner.nextInt();
+                    Main.transistorsNeeded = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для ходов: ");
-                    Main.moves = scanner.nextInt();
+                    Main.moves = Integer.parseInt(reader.readLine());
                 }
 
                 default -> System.out.println("Неправильная команда, введи корректное число");

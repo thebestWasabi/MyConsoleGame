@@ -49,13 +49,17 @@ public class Main {
     }
 
     private static void startNewGame() {
-        System.out.println("Вы начали новую игру");
+
+        Game game = new Game(sizeX, sizeY, amountOfEnemies, transistorsNeeded, moves);
+        game.fillFieldWithEmptyObjects();
+        game.startGame();
     }
 
     private static void openOptionsMenu() {
     }
 
     private static void showCredits() {
+
         System.out.println("\nCreated by Maxim Khamzin\n" +
                 "version 1.0a, last modified on 10.08.2022\n" +
                 "contact me at openpw@yandex.com\n");

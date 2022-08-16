@@ -1,7 +1,6 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class OptionsMenu {
 
@@ -48,7 +47,6 @@ public class OptionsMenu {
 
             }
         }
-
         while (command != 3);
     }
 }

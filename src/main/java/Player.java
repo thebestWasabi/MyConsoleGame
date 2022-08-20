@@ -1,4 +1,4 @@
-public class Flowers implements Fieldable {
+public class Player implements Fieldable {
 
     @Override
     public String getSymbol() {

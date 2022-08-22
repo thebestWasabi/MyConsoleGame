@@ -8,11 +8,13 @@ public class Game {
     private int flowersGathered;
     private Field field;
     private boolean isGameFinished = false;
+    private int amountOfFlowers;
 
-    public Game(int sizeX, int sizeY, int amountOfEnemies, int transistorsNeeded, int movesLeft) {
+    public Game(int sizeX, int sizeY, int amountOfEnemies, int transistorsNeeded, int movesLeft, int amountOfFlowers) {
         this.sizeX = sizeX;
         this.sizeY = sizeY;
         this.amountOfEnemies = amountOfEnemies;
+        this.amountOfFlowers = amountOfFlowers;
         this.transistorsNeeded = transistorsNeeded;
         this.movesLeft = movesLeft;
         field = new Field(sizeX, sizeY);

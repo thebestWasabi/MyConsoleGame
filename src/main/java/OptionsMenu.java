@@ -26,7 +26,8 @@ public class OptionsMenu {
                             "\nколонки: " + Main.sizeY +
                             "\nвраги: " + Main.amountOfEnemies +
                             "\nтранзисторы: " + Main.transistorsNeeded +
-                            "\nходы: " + Main.moves
+                            "\nходы: " + Main.moves +
+                            "\nflowers: " + Main.getAmountOfFlowers
                     );
                 }
 
@@ -41,6 +42,8 @@ public class OptionsMenu {
                     Main.transistorsNeeded = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для ходов: ");
                     Main.moves = Integer.parseInt(reader.readLine());
+                    System.out.println("Введите новое значение для цветков: ");
+                    Main.getAmountOfFlowers = Integer.parseInt(reader.readLine());
                 }
 
                 default -> System.out.println("Неправильная команда, введи корректное число");

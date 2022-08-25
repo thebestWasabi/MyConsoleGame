@@ -24,7 +24,6 @@ public class Game {
     }
 
     public void fillFieldWithEmptyObjects() {
-
         for (int i = 0; i < rows; i++) {
             for (int j = 0; j < columns; j++) {
                 field.setFieldable(i, j, new Empty());
@@ -33,9 +32,9 @@ public class Game {
     }
 
     public void startGame() {
-        possesPlayer();
-        possesEnemies();
-        possesFlowers();
+        possessPlayer();
+        possessEnemies();
+        possessFlowers();
 
         while (!isGameFinished) {
             showField();
@@ -45,15 +44,15 @@ public class Game {
         }
     }
 
-    private void possesPlayer() {
+    private void possessPlayer() {
 
     }
 
-    private void possesEnemies() {
+    private void possessEnemies() {
 
     }
 
-    private void possesFlowers() {
+    private void possessFlowers() {
 
     }
 
@@ -73,7 +72,6 @@ public class Game {
     }
 
     private void checkIsGameNotFinished() {
-
         if (turnsLeft == 0) {
             System.out.println("No more turns left, you lose!");
             isGameFinished = true;

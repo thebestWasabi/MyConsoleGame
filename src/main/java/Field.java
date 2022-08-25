@@ -27,12 +27,9 @@ public class Field {
     }
 
     public void showField() {
-
         for (int i = 0; i < rows; i++) {
-
             System.out.println();
             for (int j = 0; j < columns; j++) {
-
                 System.out.print(field[i][j].getSymbol());
             }
         }

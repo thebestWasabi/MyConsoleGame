@@ -10,7 +10,6 @@ public class OptionsMenu {
     public static void showOptionsMenu() throws IOException {
 
         do {
-
             System.out.println("\nСделай свой выбор и нажми enter\n" +
                     "1: Показать текущие настройки\n" +
                     "2: Изменить настройки\n" +
@@ -22,32 +21,30 @@ public class OptionsMenu {
 
                 case 1 -> {
                     System.out.println("\nТекущие настройки: " +
-                            "\nряды: " + Main.rows +
-                            "\nколонки: " + Main.columns +
-                            "\nвраги: " + Main.amountOfEnemies +
-                            "\nтранзисторы: " + Main.transistorsNeeded +
-                            "\nходы: " + Main.moves +
-                            "\nflowers: " + Main.getAmountOfFlowers
+                            "\nряды: " + MainMenu.rows +
+                            "\nколонки: " + MainMenu.columns +
+                            "\nвраги: " + MainMenu.amountOfEnemies +
+                            "\nтранзисторы: " + MainMenu.transistorsNeeded +
+                            "\nходы: " + MainMenu.moves +
+                            "\nflowers: " + MainMenu.getAmountOfFlowers
                     );
                 }
 
                 case 2 -> {
                     System.out.println("Введите новое значение для рядов: ");
-                    Main.rows = Integer.parseInt(reader.readLine());
+                    MainMenu.rows = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для колонок: ");
-                    Main.columns = Integer.parseInt(reader.readLine());
+                    MainMenu.columns = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для врагов: ");
-                    Main.amountOfEnemies = Integer.parseInt(reader.readLine());
+                    MainMenu.amountOfEnemies = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для транзисторов: ");
-                    Main.transistorsNeeded = Integer.parseInt(reader.readLine());
+                    MainMenu.transistorsNeeded = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для ходов: ");
-                    Main.moves = Integer.parseInt(reader.readLine());
+                    MainMenu.moves = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для цветков: ");
-                    Main.getAmountOfFlowers = Integer.parseInt(reader.readLine());
+                    MainMenu.getAmountOfFlowers = Integer.parseInt(reader.readLine());
                 }
-
                 default -> System.out.println("Неправильная команда, введи корректное число");
-
             }
         }
         while (command != 3);

@@ -22,8 +22,8 @@ public class OptionsMenu {
 
                 case 1 -> {
                     System.out.println("\nТекущие настройки: " +
-                            "\nряды: " + Main.sizeX +
-                            "\nколонки: " + Main.sizeY +
+                            "\nряды: " + Main.rows +
+                            "\nколонки: " + Main.columns +
                             "\nвраги: " + Main.amountOfEnemies +
                             "\nтранзисторы: " + Main.transistorsNeeded +
                             "\nходы: " + Main.moves +
@@ -33,9 +33,9 @@ public class OptionsMenu {
 
                 case 2 -> {
                     System.out.println("Введите новое значение для рядов: ");
-                    Main.sizeX = Integer.parseInt(reader.readLine());
+                    Main.rows = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для колонок: ");
-                    Main.sizeY = Integer.parseInt(reader.readLine());
+                    Main.columns = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для врагов: ");
                     Main.amountOfEnemies = Integer.parseInt(reader.readLine());
                     System.out.println("Введите новое значение для транзисторов: ");

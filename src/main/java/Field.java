@@ -1,21 +1,21 @@
 public class Field {
 
-    private int sizeX;
-    private int sizeY;
+    private int rows;
+    private int columns;
     private Fieldable[][] field;
 
-    public Field(int sizeX, int sizeY) {
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
-        field = new Fieldable[sizeX][sizeY];
+    public Field(int rows, int columns) {
+        this.rows = rows;
+        this.columns = columns;
+        field = new Fieldable[rows][columns];
     }
 
-    public int getSizeX() {
-        return sizeX;
+    public int getRows() {
+        return rows;
     }
 
-    public int getSizeY() {
-        return sizeY;
+    public int getColumns() {
+        return columns;
     }
 
     public void setFieldable(int x, int y, Fieldable object) {
@@ -28,13 +28,12 @@ public class Field {
 
     public void showField() {
 
-        System.out.println();
-        for (int i = 0; i < sizeX; i++) {
+        for (int i = 0; i < rows; i++) {
 
             System.out.println();
-            for (int j = 0; j < sizeY; j++) {
+            for (int j = 0; j < columns; j++) {
 
-                System.out.println(field[i][j].getSymbol());
+                System.out.print(field[i][j].getSymbol());
             }
         }
         System.out.println();

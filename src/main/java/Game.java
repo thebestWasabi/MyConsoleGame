@@ -1,42 +1,43 @@
+import java.util.ArrayList;
+
 public class Game {
 
-    private int sizeX;
-    private int sizeY;
+    private int rows;
+    private int columns;
     private int amountOfEnemies;
     private int transistorsNeeded;
-    private int movesLeft;
-    private int flowersGathered;
+    private int turnsLeft;
+    private int transistorsGathered;
     private Field field;
     private boolean isGameFinished = false;
     private int amountOfFlowers;
+    private ArrayList<Flowers> flowersArrayList = new ArrayList<>();
 
-    public Game(int sizeX, int sizeY, int amountOfEnemies, int transistorsNeeded, int movesLeft, int amountOfFlowers) {
-        this.sizeX = sizeX;
-        this.sizeY = sizeY;
+    public Game(int rows, int columns, int amountOfEnemies, int transistorsNeeded, int turnsLeft, int amountOfFlowers) {
+        this.rows = rows;
+        this.columns = columns;
         this.amountOfEnemies = amountOfEnemies;
         this.amountOfFlowers = amountOfFlowers;
         this.transistorsNeeded = transistorsNeeded;
-        this.movesLeft = movesLeft;
-        field = new Field(sizeX, sizeY);
+        this.turnsLeft = turnsLeft;
+        field = new Field(rows, columns);
     }
 
     public void fillFieldWithEmptyObjects() {
 
-        for (int i = 0; i < sizeX; i++) {
-            for (int j = 0; j < sizeY; j++) {
+        for (int i = 0; i < rows; i++) {
+            for (int j = 0; j < columns; j++) {
                 field.setFieldable(i, j, new Empty());
             }
         }
     }
 
     public void startGame() {
-
         possesPlayer();
         possesEnemies();
         possesFlowers();
 
         while (!isGameFinished) {
-
             showField();
             playerTurn();
             computerTurn();
@@ -57,7 +58,10 @@ public class Game {
     }
 
     private void showField() {
-
+        System.out.println("\n\nTurns left: " + turnsLeft
+                + ", transistors gathered: " + transistorsGathered
+                + "/" + transistorsNeeded);
+        field.showField();
     }
 
     private void playerTurn() {
@@ -70,5 +74,13 @@ public class Game {
 
     private void checkIsGameNotFinished() {
 
+        if (turnsLeft == 0) {
+            System.out.println("No more turns left, you lose!");
+            isGameFinished = true;
+
+        } else if (transistorsGathered >= 100) {
+            System.out.println("You have gathered the required " + "number of transistors, you won!");
+            isGameFinished = true;
+        }
     }
 }

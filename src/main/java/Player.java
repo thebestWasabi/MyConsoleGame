@@ -4,4 +4,8 @@ public class Player implements Fieldable {
     public String getSymbol() {
         return null;
     }
+
+    public void attack() {
+
+    }
 }
